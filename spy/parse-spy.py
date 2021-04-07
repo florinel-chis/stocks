@@ -12,7 +12,7 @@ df['date'] = pandas.to_datetime(df['FromDate'], infer_datetime_format=True)
 k=0
 buyPrice=[]
 df['buy'] = df.index % 4
-df['buyPrice'] = df['Low']+df['High']/2
+df['buyPrice'] = (df['Low']+df['High'])/2
 df['positions'] = 500/df['buyPrice']
 df['investedAmount'] = 500
 
