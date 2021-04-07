@@ -26,7 +26,7 @@ print("numar pozitii:",boughtPositions," pret mediu: ",dfBought['buyPrice'].mean
 print("Suma investita: {:.2f}".format(dfBought['investedAmount'].sum()))
 lastPrice = df.iloc[-1]['Close']
 print("Pret curent: ",lastPrice)
-potentialProfit = boughtPositions*lastPrice-dfBought['buyPrice'].sum()
+potentialProfit = boughtPositions*lastPrice - (dfBought['buyPrice']*df['positions']).sum()
 print("Profit potential: ", boughtPositions*lastPrice,"-",dfBought['buyPrice'].sum(),"=",potentialProfit)
 
 filename =  'spy-dividends.tsv'
